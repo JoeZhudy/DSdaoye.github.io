@@ -1,0 +1,38 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"><title>自己改网站标题等</title><meta name="author" content="易网盟"><link rel="shortcut icon" href="/img/favicon.png"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="自己改网站标题等" type="application/atom+xml">
+</head><body><header id="page_header"><div class="header_wrap"><div id="blog_name"><a class="blog_title" id="site-name" href="/">自己改网站标题等</a></div><button class="menus_icon"><div class="navicon"></div></button><ul class="menus_items"><li class="menus_item"><a class="site-page" href="/#Publications"> Publications</a></li><li class="menus_item"><a class="site-page" href="/"> About</a></li><li class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://phower.me"> Blog</a></li></ul></div></header><main id="page_main"><div class="side-card sticky"><div class="card-wrap" itemscope itemtype="http://schema.org/Person"><div class="author-avatar"><img class="avatar-img" src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/profile.png'" alt="avatar"></div><div class="author-discrip"><h3>易网盟</h3><p class="author-bio">Your biography can be writed down here.</p></div><div class="author-links"><button class="btn m-social-links">Links</button><ul class="social-icons"><li><a class="social-icon" href="/" target="_blank"><i class="fab fa-twitter" aria-hidden="true"></i></a></li><li><a class="social-icon" href="/" target="_blank"><i class="fab fa-facebook-square" aria-hidden="true"></i></a></li><li><a class="social-icon" href="/" target="_blank"><i class="fab fa-github" aria-hidden="true"></i></a></li><li><a class="social-icon" href="/" target="_blank"><i class="fab fa-stack-overflow" aria-hidden="true"></i></a></li><li><a class="social-icon" href="/" target="_blank"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li><li><a class="social-icon" href="/" target="_blank"><i class="fab fa-weibo" aria-hidden="true"></i></a></li><li><a class="social-icon" href="/" target="_blank"><i class="fab fa-weixin" aria-hidden="true"></i></a></li><li><a class="social-icon" href="/" target="_blank"><i class="fab fa-qq" aria-hidden="true"></i></a></li><li><a class="social-icon" href="/" target="_blank"><i class="fas fa-envelope" aria-hidden="true"></i></a></li><li><a class="social-icon" href="/" target="_blank"><i class="fas fa-rss" aria-hidden="true"></i></a></li></ul><ul class="social-links"><li><a class="e-social-link" href="/" target="_blank"><i class="fas fa-graduation-cap" aria-hidden="true"></i><span>Google Scholar</span></a></li><li><a class="e-social-link" href="/" target="_blank"><i class="fab fa-orcid" aria-hidden="true"></i><span>ORCID</span></a></li></ul></div><a class="cv-links" href="/attaches/CV.pdf" target="_blank"><i class="fas fa-file-pdf" aria-hidden="true"><span>My Detail CV.</span></i></a></div></div><div class="page" itemscope itemtype="http://schema.org/CreativeWork"><h2 class="page-title">从零开始建个小站 - 实操：代码拉到本地</h2><article><p>工欲善其事必先利其器，Hexo&#x2F;Hugo虽然没后台，选用个好用的编辑器后甚至比WordPress之类的后台还方便。</p>
+<h2 id="文档编辑器"><a href="#文档编辑器" class="headerlink" title="文档编辑器"></a>文档编辑器</h2><p>优秀的MarkDown编辑器不少，Typora、Atom、vscode等都是其中的佼佼者，推荐 <code>vscode</code>：</p>
+<ul>
+<li>微软主导开发，全平台开源免费</li>
+<li>用户众多，各种功能插件一应俱全</li>
+<li>支持目录树管理，所有文件操作都可以在一个界面内完成</li>
+<li>支持分屏及实时预览</li>
+<li>与Git终端集成，版本管理一目了然，支持 <code>pull</code> 与 <code>push</code> 等界面化操作</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/35271042/118224532-3842c400-b438-11eb-923d-a5f66fa6785a.png" alt="vscode"></p>
+<p><strong>作为 MarkDown 编辑器，推荐安装以下扩展</strong></p>
+<ol>
+<li>Git History</li>
+<li>GitLens supercharges</li>
+<li>Markdown All in One</li>
+<li>Markdown Preview Mermaid Support</li>
+<li>Markdown Table</li>
+<li>Markdown Shortcuts</li>
+</ol>
+<p>其他更多扩展根据自己需求去发觉安装，代码美化，自动填充，自动关闭标签等功能应有尽有。</p>
+<h2 id="克隆仓库到本地"><a href="#克隆仓库到本地" class="headerlink" title="克隆仓库到本地"></a>克隆仓库到本地</h2><p>虽然项目仓库主页直接增删改文件都可以，但网页上只能一个一个文件操作，建议还是同步到本地使用，借助编辑器事半功倍，也相当于多了个源码本地备份。</p>
+<p>前面已经准备好了 <code>vscode</code>，那么直接在 <code>vscode</code> 中操作。</p>
+<ol>
+<li><p>启动 <code>vscode</code> ，通过快捷 <code>CTRL+~</code> 或者菜单 <code>Terminal》New Terminal（新建终端）</code></p>
+<p> <img src="https://cdn.jsdelivr.net/gh/828767/static/images/vscode_new_terminal.png" alt="新建终端"></p>
+</li>
+<li><p>在打开的终端中，通过 <code>git clone </code> 命令将项目仓库克隆到本地「也可以安装 <code>GitHub Explorer</code> 像下载工具一样界面化操作」</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 查看当前所处的目录，vscode打开文件夹后终端默认切到目录路径</span><br><span class="line">pwd</span><br><span class="line"># 为方便管理，切换到自己需要的目录，此示例是在D盘建了个git目录</span><br><span class="line">cd d:\git</span><br><span class="line"># 将仓库包括子项目保存到d:\git\REPOSITORY</span><br><span class="line">git clone --recurse-submodules https://github.com/USERNAME/REPOSITORY.git</span><br></pre></td></tr></table></figure>
+<p> 请将仓库地址换成实际地址，获取方法：打开仓库主页》在文件列表右上方有个 <code>Code</code> ，点击下拉复制，如下图所示：</p>
+<p> <img src="https://cdn.jsdelivr.net/gh/828767/static/images/github_clone_https_url.png" alt="获取项目仓库地址"></p>
+</li>
+<li><p>克隆完成后，通过快捷方式 <code>Ctrl+K Ctrl+O</code> 或者菜单 <code>File（文件）》Open Folder（打开文件夹）</code> 打开刚克隆完的仓库目录。</p>
+<p> <img src="https://cdn.jsdelivr.net/gh/828767/static/images/vscode_markdown_editor.png" alt="打开文件夹"></p>
+</li>
+</ol>
+<p>至此，我们就可以在 <code>vscode</code> 中便捷地增删改网站源文件了。</p>
+</article></div></main><div class="nav-wrap"><div class="nav"><button class="site-nav"><div class="navicon"></div></button><ul class="nav_items"><li class="nav_item"><a class="nav-page" href="/#Publications"> Publications</a></li><li class="nav_item"><a class="nav-page" href="/"> About</a></li><li class="nav_item"><a class="nav-page" target="_blank" rel="noopener" href="https://phower.me"> Blog</a></li></ul></div><div class="cd-top"><i class="fa fa-arrow-up" aria-hidden="true"></i></div></div><footer id="page_footer"><div class="footer_wrap"><div class="copyright">&copy;2020 - 2022 by 易网盟</div><div class="theme-info">Powered by <a target="_blank" href="https://hexo.io" rel="nofollow noopener">Hexo</a> & <a target="_blank" href="https://github.com/PhosphorW/hexo-theme-academia" rel="nofollow noopener">Academia Theme</a></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery-pjax@latest/jquery.pjax.min.js"></script><script src="/js/main.js"></script></body></html>

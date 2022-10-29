@@ -1,0 +1,39 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"><title>自己改网站标题等</title><meta name="author" content="易网盟"><link rel="shortcut icon" href="/img/favicon.png"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="自己改网站标题等" type="application/atom+xml">
+</head><body><header id="page_header"><div class="header_wrap"><div id="blog_name"><a class="blog_title" id="site-name" href="/">自己改网站标题等</a></div><button class="menus_icon"><div class="navicon"></div></button><ul class="menus_items"><li class="menus_item"><a class="site-page" href="/#Publications"> Publications</a></li><li class="menus_item"><a class="site-page" href="/"> About</a></li><li class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://phower.me"> Blog</a></li></ul></div></header><main id="page_main"><div class="side-card sticky"><div class="card-wrap" itemscope itemtype="http://schema.org/Person"><div class="author-avatar"><img class="avatar-img" src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/profile.png'" alt="avatar"></div><div class="author-discrip"><h3>易网盟</h3><p class="author-bio">Your biography can be writed down here.</p></div><div class="author-links"><button class="btn m-social-links">Links</button><ul class="social-icons"><li><a class="social-icon" href="/" target="_blank"><i class="fab fa-twitter" aria-hidden="true"></i></a></li><li><a class="social-icon" href="/" target="_blank"><i class="fab fa-facebook-square" aria-hidden="true"></i></a></li><li><a class="social-icon" href="/" target="_blank"><i class="fab fa-github" aria-hidden="true"></i></a></li><li><a class="social-icon" href="/" target="_blank"><i class="fab fa-stack-overflow" aria-hidden="true"></i></a></li><li><a class="social-icon" href="/" target="_blank"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li><li><a class="social-icon" href="/" target="_blank"><i class="fab fa-weibo" aria-hidden="true"></i></a></li><li><a class="social-icon" href="/" target="_blank"><i class="fab fa-weixin" aria-hidden="true"></i></a></li><li><a class="social-icon" href="/" target="_blank"><i class="fab fa-qq" aria-hidden="true"></i></a></li><li><a class="social-icon" href="/" target="_blank"><i class="fas fa-envelope" aria-hidden="true"></i></a></li><li><a class="social-icon" href="/" target="_blank"><i class="fas fa-rss" aria-hidden="true"></i></a></li></ul><ul class="social-links"><li><a class="e-social-link" href="/" target="_blank"><i class="fas fa-graduation-cap" aria-hidden="true"></i><span>Google Scholar</span></a></li><li><a class="e-social-link" href="/" target="_blank"><i class="fab fa-orcid" aria-hidden="true"></i><span>ORCID</span></a></li></ul></div><a class="cv-links" href="/attaches/CV.pdf" target="_blank"><i class="fas fa-file-pdf" aria-hidden="true"><span>My Detail CV.</span></i></a></div></div><div class="page" itemscope itemtype="http://schema.org/CreativeWork"><h2 class="page-title">从零开始建个小站 - 实操：准备存储仓库</h2><article><p>本实操仅针对 <a href="/guide-how-to-build-site-2.html" title="从零开始建个小站 - 建站方案选择">建站方案选择</a> 中提及的免费方案：<strong>hugo&#x2F;hexo + GitHub + GitHub免费二级域名&#x2F;自备域名</strong>，另外的付费方案自带网站后台，界面化的一体操作没什么好演示的，如有需要可求助我们的战略合作伙伴Google和百度。</p>
+<h2 id="建立存储仓库"><a href="#建立存储仓库" class="headerlink" title="建立存储仓库"></a>建立存储仓库</h2><p>虽然可以通过分支控制源文件和对外访问文件，但还是建议分仓库存储：</p>
+<ol>
+<li><strong>公开：GitHubPages仓库</strong>：页面文件对外访问</li>
+<li><strong>私有：项目仓库</strong>：存储网站源文件，只有自己可见防止提交记录、网站配置等机密信息外泄</li>
+</ol>
+<h3 id="公开：GitHubPages仓库"><a href="#公开：GitHubPages仓库" class="headerlink" title="公开：GitHubPages仓库"></a><strong>公开：GitHubPages仓库</strong></h3><ol>
+<li><p>登录GitHub，在任何页面的右上角，使用 <code>+</code> 下拉菜单选择 <code>New repository（新建仓库）</code></p>
+<p> <img src="https://docs.github.com/assets/cb-11427/images/help/repository/repo-create.png" alt="新建GitHubPages仓库"></p>
+</li>
+<li><p>因为要对外访问，所以名称必须为：<code>&lt;owner&gt;.github.io</code>，且可见性必须为 <code>public(公开)</code>：</p>
+<p> <img src="https://docs.github.com/assets/cb-34195/images/help/pages/create-repository-name-pages.png" alt="username.github.io"><br> <img src="https://docs.github.com/assets/cb-20877/images/help/repository/create-repository-public-private.png" alt="可见性选public(公开)"></p>
+</li>
+<li><p>此时只是个空仓库备用，等有提交了再来设置pages</p>
+</li>
+</ol>
+<h3 id="私有：项目仓库"><a href="#私有：项目仓库" class="headerlink" title="私有：项目仓库"></a><strong>私有：项目仓库</strong></h3><p>项目仓库保存着网站的源代码，控制网站的输出内容和页面样式。这里用导入模板仓库的方法，快速生成具有与模板仓库相同的目录结构和文件的新仓库，该模板仓库实现功能：</p>
+<ul>
+<li>自动将源文件渲染并发布到GitHubPages仓库pages分支</li>
+<li>自动判断配置的网站域名，并决定是否需要绑定 <code>CNAME</code></li>
+<li>自动渲染发布到当前项目仓库pages分支，如果不设置为私有仓库可作为项目主页访问</li>
+<li>pages分支只保留最后1次提交记录</li>
+</ul>
+<ol>
+<li><p>打开 <a target="_blank" rel="noopener" href="https://github.com/828767/" title="hugo/hexo框架模板">这个模板仓库</a> 主页面，根据自己的需求选择 <code>action-hugo</code> 或者 <code>action-hexo</code> 等仓库任选其一</p>
+</li>
+<li><p>在文件列表上方，单击 <code>Use this template（使用此模板）</code></p>
+<p> <img src="https://docs.github.com/assets/cb-36544/images/help/repository/use-this-template-button.png" alt="使用模板"></p>
+</li>
+<li><p>输入你想要的仓库名称和描述（可选），网站源码仓库可见性建议选择 <code>Private（私有）</code></p>
+<p> <img src="https://docs.github.com/assets/cb-25139/images/help/repository/create-repository-name.png" alt="项目仓库名称"></p>
+</li>
+<li><p>（可选）要包括模板中所有分支的目录结构和文件，而不仅仅是默认分支，请勾选 <code>Include all branches（包括所有分支）</code></p>
+</li>
+<li><p>最后点击 <code>Create repository from template（从模板创建仓库）</code></p>
+</li>
+</ol>
+</article></div></main><div class="nav-wrap"><div class="nav"><button class="site-nav"><div class="navicon"></div></button><ul class="nav_items"><li class="nav_item"><a class="nav-page" href="/#Publications"> Publications</a></li><li class="nav_item"><a class="nav-page" href="/"> About</a></li><li class="nav_item"><a class="nav-page" target="_blank" rel="noopener" href="https://phower.me"> Blog</a></li></ul></div><div class="cd-top"><i class="fa fa-arrow-up" aria-hidden="true"></i></div></div><footer id="page_footer"><div class="footer_wrap"><div class="copyright">&copy;2020 - 2022 by 易网盟</div><div class="theme-info">Powered by <a target="_blank" href="https://hexo.io" rel="nofollow noopener">Hexo</a> & <a target="_blank" href="https://github.com/PhosphorW/hexo-theme-academia" rel="nofollow noopener">Academia Theme</a></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery-pjax@latest/jquery.pjax.min.js"></script><script src="/js/main.js"></script></body></html>
